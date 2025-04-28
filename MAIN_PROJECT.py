@@ -8,7 +8,7 @@ ADMIN_PASSWORD = "1234"
 
 # --- ROOT Window ---
 root = tk.Tk()
-root.title("Hostel Management System")
+root.title("Student Management System")
 root.geometry("1000x700")
 
 # --- Clear frames function ---
