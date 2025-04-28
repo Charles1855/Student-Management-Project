@@ -3,8 +3,8 @@ from tkinter import ttk, messagebox
 import MANAGE
 
 # --- Admin Credentials ---
-ADMIN_USERNAME = "admin"
-ADMIN_PASSWORD = "1234"
+ADMIN_USERNAME = "ADMIN"
+ADMIN_PASSWORD = "#270707"
 
 # --- ROOT Window ---
 root = tk.Tk()
