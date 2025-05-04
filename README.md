@@ -1,19 +1,19 @@
 Student Management System
 
-Overview.
+Overview:
 
 This is a GUI-based Student Management System built using Python.
 The application uses Tkinter for the graphical user interface and SQLite for the database backend.
 It enables administrators to efficiently manage student and course data, providing functions to add, update, delete, and search records.
 
- Modules Used.
+ Modules Used:
 - tkinter: Used for creating the GUI.
 - ttk: A submodule of tkinter for themed widgets like Treeview.
 - sqlite3: Provides an interface for the SQLite database.
 - messagebox: Displays pop-up messages for alerts, confirmations, and errors.
 - MANAGE: A custom module containing functions to interact with the database.
 
-Login System.
+Login System:
 
 The system has a secure login interface that only allows admin access.
 Admin credentials are hardcoded for demonstration:
@@ -24,19 +24,19 @@ The login() function verifies credentials. If they are valid, the admin is taken
 Otherwise, an error message is shown.
 The logout() function confirms logout and returns to the login screen.
 
-Window Layout.
+Window Layout:
 
 The window is the main container with a size of 750x550 pixels and a light teal background.
 It contains multiple frames for login, dashboard, student, and course management.
 
-Dashboard.
+Dashboard:
 
 The dashboard provides navigation buttons:
 - Manage Students: Opens the student management interface.
 - Manage Courses: Opens the course management interface.
 - Logout: Logs out the current user.
 
-Student Management.
+Student Management:
 
 This section allows the admin to:
 - Add new students with complete details.
@@ -46,7 +46,7 @@ This section allows the admin to:
 - View all students in a table.
 The Treeview widget displays all records, and fields include Reg No, Name, Age, Gender, Email, Phone, and Course.
 
-Course Management.
+Course Management:
 
 The course section allows the admin to:
 - Add new courses with Course Code, Name, and Student Count.
@@ -54,7 +54,7 @@ The course section allows the admin to:
 - View all courses in a table.
 Like the student section, a Treeview widget is used for display.
 
-Database Schema.
+Database Schema:
 
 The database is SQLite-based and contains two tables:
 
@@ -72,7 +72,7 @@ Table: courses
 - course_name
 - student_count
 
-Database Functions (MANAGE Module).
+Database Functions (MANAGE Module):
 
 Student Functions:
 - add_student(): Inserts a new student.
@@ -86,7 +86,7 @@ Course Functions:
 - delete_course(): Deletes a course by code.
 - get_courses(): Returns all course records.
 
-Error Handling.
+Error Handling:
 
 Input fields are validated before submission.
 
