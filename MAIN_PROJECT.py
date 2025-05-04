@@ -7,10 +7,10 @@ ADMIN_USERNAME = "Admin"
 ADMIN_PASSWORD = "#270707"
 
 # --- ROOT Window ---
-root = tk.Tk()
-root.title("Student Management System")
-root.geometry("750x550")
-root.configure(bg="#e0f7fa")  # Light teal background
+window = tk.Tk()
+window.title("Student Management System")
+window.geometry("750x550")
+window.configure(bg="#e0f7fa")  # Light teal background
 
 # --- Styling ---
 button_style = {"bg": "#00796b", "fg": "white", "activebackground": "#004d40", "activeforeground": "white", "padx": 10, "pady": 5}
@@ -19,7 +19,7 @@ entry_style = {"font": ("Arial", 11)}
 
 # --- Clear frames function ---
 def clear_frames():
-    for widget in root.winfo_children():
+    for widget in window.winfo_children():
         widget.pack_forget()
 
 # --- LOGIN FUNCTIONS ---
@@ -185,7 +185,11 @@ def refresh_courses():
 # === FRAMES SETUP ===
 
 # --- Login Frame ---
-login_frame = tk.Frame(root, bg="#e0f7fa")
+
+login_frame = tk.Frame(window, bg="#e0f7fa")
+
+tk.Label(login_frame, text="Student Management System", font=("Arial", 18, "bold"), bg="#e0f7fa", fg="#004d40").pack(pady=20)
+
 tk.Label(login_frame, text="Username:", **label_style).pack(pady=5)
 username_entry = tk.Entry(login_frame, **entry_style)
 username_entry.pack(pady=5)
@@ -198,13 +202,13 @@ tk.Button(login_frame, text="Login", command=login, **button_style).pack(pady=20
 login_frame.pack(fill="both", expand=True)
 
 # --- Dashboard Frame ---
-dashboard_frame = tk.Frame(root, bg="#e0f7fa")
+dashboard_frame = tk.Frame(window, bg="#e0f7fa")
 tk.Button(dashboard_frame, text="Manage Students", width=25, height=2, command=show_student_frame, **button_style).pack(pady=10)
 tk.Button(dashboard_frame, text="Manage Courses", width=25, height=2, command=show_course_frame, **button_style).pack(pady=10)
 tk.Button(dashboard_frame, text="Logout", width=25, height=2, command=logout, **button_style).pack(pady=10)
 
 # --- Student Frame ---
-student_frame = tk.Frame(root, bg="#e0f7fa")
+student_frame = tk.Frame(window, bg="#e0f7fa")
 
 tk.Label(student_frame, text="Reg No", **label_style).grid(row=0, column=0)
 reg_entry = tk.Entry(student_frame, **entry_style)
@@ -259,7 +263,7 @@ student_scroll.grid(row=9, column=3, sticky='ns')
 tk.Button(student_frame, text="Back", command=show_dashboard, bg="lightgrey", padx=10, pady=5).grid(row=10, column=1, pady=20)
 
 # --- Course Frame ---
-course_frame = tk.Frame(root, bg="#e0f7fa")
+course_frame = tk.Frame(window, bg="#e0f7fa")
 
 tk.Label(course_frame, text="Course Code", **label_style).grid(row=0, column=0)
 course_code_entry = tk.Entry(course_frame, **entry_style)
@@ -291,4 +295,4 @@ course_scroll.grid(row=4, column=2, sticky='ns')
 tk.Button(course_frame, text="Back", command=show_dashboard, bg="lightgrey", padx=10, pady=5).grid(row=5, column=0, columnspan=2, pady=20)
 
 # --- MAINLOOP ---
-root.mainloop()
+window.mainloop()
