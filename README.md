@@ -109,4 +109,5 @@ Follow these steps to run the Student Management System on your computer:
  Suggestions for Improvement:
 - Use password hashing for secure login.
 - Enable data export to CSV or PDF.
+- Implement a GPA calculator.
 - Include filtering options for better search experience.
