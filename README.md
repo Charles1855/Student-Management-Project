@@ -88,7 +88,9 @@ Course Functions:
 10. Error Handling.
 
 Input fields are validated before submission.
+
 Errors like missing or incorrect input are caught and displayed.
+
 Confirmation dialogs are used for destructive actions like delete and logout.
 
 Follow these steps to run the Student Management System on your computer:
