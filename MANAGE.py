@@ -1,7 +1,7 @@
 import sqlite3
 
 # Connect to database (or create it)
-conn = sqlite3.connect('hostel_management.db')
+conn = sqlite3.connect('student_management.db')
 cur = conn.cursor()
 
 # Create Students table
