@@ -92,10 +92,15 @@ Errors like missing or incorrect input are caught and displayed.
 Confirmation dialogs are used for destructive actions like delete and logout.
 
 Follow these steps to run the Student Management System on your computer:
+
 • Ensure Python 3.x is installed on your system.
+
 • Install the required libraries (Tkinter and sqlite3 are standard with Python).
+
 • Download the project files including the main script and MANAGE module.
+
 • Open the main Python script and locate the section where the window is defined.
+
 • Run the main script (`python main.py`) to launch the application.
 
  Suggestions for Improvement:
