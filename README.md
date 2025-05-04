@@ -13,6 +13,7 @@ It enables administrators to efficiently manage student and course data, providi
 - MANAGE: A custom module containing functions to interact with the database.
 
 3. Login System.
+
 The system has a secure login interface that only allows admin access.
 Admin credentials are hardcoded for demonstration:
 Username: Admin
@@ -22,17 +23,20 @@ The login() function verifies credentials. If they are valid, the admin is taken
 Otherwise, an error message is shown.
 The logout() function confirms logout and returns to the login screen.
 
-4. Window Layout.
+5. Window Layout.
+
 The window is the main container with a size of 750x550 pixels and a light teal background.
 It contains multiple frames for login, dashboard, student, and course management.
 
-5. Dashboard.
+6. Dashboard.
+
 The dashboard provides navigation buttons:
 - Manage Students: Opens the student management interface.
 - Manage Courses: Opens the course management interface.
 - Logout: Logs out the current user.
 
 6. Student Management.
+
 This section allows the admin to:
 - Add new students with complete details.
 - Update existing student records.
@@ -42,6 +46,7 @@ This section allows the admin to:
 The Treeview widget displays all records, and fields include Reg No, Name, Age, Gender, Email, Phone, and Course.
 
 7. Course Management.
+
 The course section allows the admin to:
 - Add new courses with Course Code, Name, and Student Count.
 - Delete selected courses.
@@ -49,6 +54,7 @@ The course section allows the admin to:
 Like the student section, a Treeview widget is used for display.
 
 8. Database Schema.
+
 The database is SQLite-based and contains two tables:
 
 Table: students
@@ -66,6 +72,7 @@ Table: courses
 - student_count
 
 9. Database Functions (MANAGE Module).
+
 Student Functions:
 - add_student(): Inserts a new student.
 - update_student(): Modifies existing student data.
@@ -79,6 +86,7 @@ Course Functions:
 - get_courses(): Returns all course records.
 
 10. Error Handling.
+
 Input fields are validated before submission.
 Errors like missing or incorrect input are caught and displayed.
 Confirmation dialogs are used for destructive actions like delete and logout.
