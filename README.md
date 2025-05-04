@@ -1,11 +1,12 @@
 Student Management System
 
 1. Overview.
+
 This is a GUI-based Student Management System built using Python.
 The application uses Tkinter for the graphical user interface and SQLite for the database backend.
 It enables administrators to efficiently manage student and course data, providing functions to add, update, delete, and search records.
 
-2. Modules Used.
+3. Modules Used.
 - tkinter: Used for creating the GUI.
 - ttk: A submodule of tkinter for themed widgets like Treeview.
 - sqlite3: Provides an interface for the SQLite database.
