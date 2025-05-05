@@ -203,10 +203,12 @@ login_frame.pack(fill="both", expand=True)
 
 # --- Dashboard Frame ---
 dashboard_frame = tk.Frame(window, bg="#e0f7fa")
-tk.Button(dashboard_frame, text="Manage Students", width=25, height=2, command=show_student_frame, **button_style).pack(pady=10)
-tk.Button(dashboard_frame, text="Manage Courses", width=25, height=2, command=show_course_frame, **button_style).pack(pady=10)
-tk.Button(dashboard_frame, text="Logout", width=25, height=2, command=logout, **button_style).pack(pady=10)
+dashboard_inner = tk.Frame(dashboard_frame, bg="#e0f7fa")
+dashboard_inner.place(relx=0.5, rely=0.5, anchor="center")
 
+tk.Button(dashboard_inner, text="Manage Students", width=25, height=2, command=show_student_frame, **button_style).pack(pady=10)
+tk.Button(dashboard_inner, text="Manage Courses", width=25, height=2, command=show_course_frame, **button_style).pack(pady=10)
+tk.Button(dashboard_inner, text="Logout", width=25, height=2, command=logout, **button_style).pack(pady=10)
 # --- Student Frame ---
 student_frame = tk.Frame(window, bg="#e0f7fa")
 
