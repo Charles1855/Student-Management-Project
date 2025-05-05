@@ -4,12 +4,13 @@ import MANAGE
 
 # --- Admin Credentials ---
 ADMIN_USERNAME = "Admin"
-ADMIN_PASSWORD = "#270707"
+ADMIN_PASSWORD = "password"
 
 # --- ROOT Window ---
 window = tk.Tk()
+
 window.title("Student Management System")
-window.geometry("750x550")
+window.geometry("1890x1080")
 window.configure(bg="#e0f7fa")  # Light teal background
 
 # --- Styling ---
@@ -209,92 +210,103 @@ dashboard_inner.place(relx=0.5, rely=0.5, anchor="center")
 tk.Button(dashboard_inner, text="Manage Students", width=25, height=2, command=show_student_frame, **button_style).pack(pady=10)
 tk.Button(dashboard_inner, text="Manage Courses", width=25, height=2, command=show_course_frame, **button_style).pack(pady=10)
 tk.Button(dashboard_inner, text="Logout", width=25, height=2, command=logout, **button_style).pack(pady=10)
+
 # --- Student Frame ---
 student_frame = tk.Frame(window, bg="#e0f7fa")
 
-tk.Label(student_frame, text="Reg No", **label_style).grid(row=0, column=0)
-reg_entry = tk.Entry(student_frame, **entry_style)
-reg_entry.grid(row=0, column=1)
+student_inner = tk.Frame(student_frame, bg="#e0f7fa")
+student_inner.place(relx=0.5, rely=0.05, anchor="n")
 
-tk.Label(student_frame, text="Name", **label_style).grid(row=1, column=0)
-name_entry = tk.Entry(student_frame, **entry_style)
-name_entry.grid(row=1, column=1)
+tk.Label(student_inner, text="Reg No", **label_style).grid(row=0, column=0, sticky="e", padx=5, pady=5)
+reg_entry = tk.Entry(student_inner, **entry_style)
+reg_entry.grid(row=0, column=1, padx=5, pady=5)
 
-tk.Label(student_frame, text="Age", **label_style).grid(row=2, column=0)
-age_entry = tk.Entry(student_frame, **entry_style)
-age_entry.grid(row=2, column=1)
+tk.Label(student_inner, text="Name", **label_style).grid(row=1, column=0, sticky="e", padx=5, pady=5)
+name_entry = tk.Entry(student_inner, **entry_style)
+name_entry.grid(row=1, column=1, padx=5, pady=5)
 
-tk.Label(student_frame, text="Gender", **label_style).grid(row=3, column=0)
+tk.Label(student_inner, text="Age", **label_style).grid(row=2, column=0, sticky="e", padx=5, pady=5)
+age_entry = tk.Entry(student_inner, **entry_style)
+age_entry.grid(row=2, column=1, padx=5, pady=5)
+
+tk.Label(student_inner, text="Gender", **label_style).grid(row=3, column=0, sticky="e", padx=5, pady=5)
 gender_var = tk.StringVar()
-tk.Radiobutton(student_frame, text="Male", variable=gender_var, value="Male", bg="#e0f7fa").grid(row=3, column=1, sticky="w")
-tk.Radiobutton(student_frame, text="Female", variable=gender_var, value="Female", bg="#e0f7fa").grid(row=3, column=2, sticky="w")
+tk.Radiobutton(student_inner, text="Male", variable=gender_var, value="Male", bg="#e0f7fa").grid(row=3, column=1, sticky="w", padx=5)
+tk.Radiobutton(student_inner, text="Female", variable=gender_var, value="Female", bg="#e0f7fa").grid(row=3, column=2, sticky="w", padx=5)
 
-tk.Label(student_frame, text="Email", **label_style).grid(row=4, column=0)
-email_entry = tk.Entry(student_frame, **entry_style)
-email_entry.grid(row=4, column=1)
+tk.Label(student_inner, text="Email", **label_style).grid(row=4, column=0, sticky="e", padx=5, pady=5)
+email_entry = tk.Entry(student_inner, **entry_style)
+email_entry.grid(row=4, column=1, padx=5, pady=5)
 
-tk.Label(student_frame, text="Phone", **label_style).grid(row=5, column=0)
-phone_entry = tk.Entry(student_frame, **entry_style)
-phone_entry.grid(row=5, column=1)
+tk.Label(student_inner, text="Phone", **label_style).grid(row=5, column=0, sticky="e", padx=5, pady=5)
+phone_entry = tk.Entry(student_inner, **entry_style)
+phone_entry.grid(row=5, column=1, padx=5, pady=5)
 
-tk.Label(student_frame, text="Course", **label_style).grid(row=6, column=0)
-course_entry = tk.Entry(student_frame, **entry_style)
-course_entry.grid(row=6, column=1)
+tk.Label(student_inner, text="Course", **label_style).grid(row=6, column=0, sticky="e", padx=5, pady=5)
+course_entry = tk.Entry(student_inner, **entry_style)
+course_entry.grid(row=6, column=1, padx=5, pady=5)
 
-tk.Button(student_frame, text="Add Student", command=add_student, **button_style).grid(row=7, column=0, pady=5)
-tk.Button(student_frame, text="Update Student", command=update_student, **button_style).grid(row=7, column=1, pady=5)
-tk.Button(student_frame, text="Delete Student", command=delete_student, **button_style).grid(row=7, column=2, pady=5)
+tk.Button(student_inner, text="Add Student", command=add_student, **button_style).grid(row=7, column=0, pady=10)
+tk.Button(student_inner, text="Update Student", command=update_student, **button_style).grid(row=7, column=1, pady=10)
+tk.Button(student_inner, text="Delete Student", command=delete_student, **button_style).grid(row=7, column=2, pady=10)
 
-tk.Label(student_frame, text="Search", **label_style).grid(row=8, column=0)
-search_entry = tk.Entry(student_frame, **entry_style)
-search_entry.grid(row=8, column=1)
-tk.Button(student_frame, text="Search", command=search_student, **button_style).grid(row=8, column=2)
+tk.Label(student_inner, text="Search", **label_style).grid(row=8, column=0, sticky="e", padx=5, pady=5)
+search_entry = tk.Entry(student_inner, **entry_style)
+search_entry.grid(row=8, column=1, padx=5, pady=5)
+tk.Button(student_inner, text="Search", command=search_student, **button_style).grid(row=8, column=2, padx=5)
 
+# Treeview
 columns = ("Reg No", "Name", "Age", "Gender", "Email", "Phone", "Course")
 student_table = ttk.Treeview(student_frame, columns=columns, show="headings")
 for col in columns:
     student_table.heading(col, text=col)
-    student_table.column(col, width=100)
+    student_table.column(col, width=150)
 
-student_table.grid(row=9, column=0, columnspan=3, padx=10, pady=10)
-
+student_table.place(relx=0.5, rely=0.45, anchor="n")
 student_scroll = ttk.Scrollbar(student_frame, orient="vertical", command=student_table.yview)
 student_table.configure(yscrollcommand=student_scroll.set)
-student_scroll.grid(row=9, column=3, sticky='ns')
+student_scroll.place(relx=0.84, rely=0.45, relheight=0.27, anchor="n")
 
-tk.Button(student_frame, text="Back", command=show_dashboard, bg="lightgrey", padx=10, pady=5).grid(row=10, column=1, pady=20)
+tk.Button(student_frame, text="Back", command=show_dashboard, bg="lightgrey", padx=10, pady=5).place(relx=0.5, rely=0.77, anchor="s")
 
 # --- Course Frame ---
 course_frame = tk.Frame(window, bg="#e0f7fa")
 
-tk.Label(course_frame, text="Course Code", **label_style).grid(row=0, column=0)
-course_code_entry = tk.Entry(course_frame, **entry_style)
-course_code_entry.grid(row=0, column=1)
+course_inner = tk.Frame(course_frame, bg="#e0f7fa")
+course_inner.place(relx=0.5, rely=0.05, anchor="n")
 
-tk.Label(course_frame, text="Course Name", **label_style).grid(row=1, column=0)
-course_name_entry = tk.Entry(course_frame, **entry_style)
-course_name_entry.grid(row=1, column=1)
+tk.Label(course_inner, text="Course Code", **label_style).grid(row=0, column=0, sticky="e", padx=5, pady=5)
+course_code_entry = tk.Entry(course_inner, **entry_style)
+course_code_entry.grid(row=0, column=1, padx=5, pady=5)
 
-tk.Label(course_frame, text="Student Count", **label_style).grid(row=2, column=0)
-student_count_entry = tk.Entry(course_frame, **entry_style)
-student_count_entry.grid(row=2, column=1)
+tk.Label(course_inner, text="Course Name", **label_style).grid(row=1, column=0, sticky="e", padx=5, pady=5)
+course_name_entry = tk.Entry(course_inner, **entry_style)
+course_name_entry.grid(row=1, column=1, padx=5, pady=5)
 
-tk.Button(course_frame, text="Add Course", command=add_course, **button_style).grid(row=3, column=0, pady=5)
-tk.Button(course_frame, text="Delete Course", command=delete_course, **button_style).grid(row=3, column=1, pady=5)
+tk.Label(course_inner, text="Student Count", **label_style).grid(row=2, column=0, sticky="e", padx=5, pady=5)
+student_count_entry = tk.Entry(course_inner, **entry_style)
+student_count_entry.grid(row=2, column=1, padx=5, pady=5)
 
+button_frame = tk.Frame(course_inner, bg="#e0f7fa")
+button_frame.grid(row=3, column=0, columnspan=2, pady=(15, 25))
+
+tk.Button(button_frame, text="Add Course", command=add_course, **button_style).pack(side="left", padx=10)
+tk.Button(button_frame, text="Delete Course", command=delete_course, **button_style).pack(side="left", padx=10)
+
+# Treeview
 course_columns = ("Course Code", "Course Name", "Student Count")
 course_table = ttk.Treeview(course_frame, columns=course_columns, show="headings")
 for col in course_columns:
     course_table.heading(col, text=col)
     course_table.column(col, width=150)
 
-course_table.grid(row=4, column=0, columnspan=2, pady=10)
+course_table.place(relx=0.5, rely=0.3, anchor="n")
 
 course_scroll = ttk.Scrollbar(course_frame, orient="vertical", command=course_table.yview)
 course_table.configure(yscrollcommand=course_scroll.set)
-course_scroll.grid(row=4, column=2, sticky='ns')
+course_scroll.place(relx=0.65, rely=0.3, relheight=0.27, anchor="n")
 
-tk.Button(course_frame, text="Back", command=show_dashboard, bg="lightgrey", padx=10, pady=5).grid(row=5, column=0, columnspan=2, pady=20)
+tk.Button(course_frame, text="Back", command=show_dashboard, bg="lightgrey", padx=10, pady=5).place(relx=0.5, rely=0.65, anchor="s")
 
 # --- MAINLOOP ---
 window.mainloop()
